@@ -4,14 +4,16 @@ import pandas as pd
 import yfinance as yf
 
 
-
 # class - functions
 from userinput import UserInput
 from datasource import DataSource
 
+# Fetching user input, passing the number to the ticker function
+print("Enter a number: ")
+number = int(input())
 
-
-data = DataSource().ticker(0, 6, 3)
+# Printing the ticker with the index given by user
+data = DataSource().ticker(number, 6, 3)
 
 opening_price, closing_price = DataSource().tickerValues(data)
 
@@ -33,5 +35,7 @@ def printValues(opening_price, closing_price):
 
 
 printValues(opening_price, closing_price)
+
+# Fetching 250 crypto tickers
 t = DataSource().fetchTickers()
-print(t)
+# print(t)
