@@ -3,14 +3,16 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
+
+
 # class - functions
 from userinput import UserInput
 from datasource import DataSource
 
 
-#data = DataSource().ticker(0, 3, 3)
-data = yf.download(tickers='BTC-USD', period='5d', interval='1h')
-print(data)
+
+data = DataSource().ticker(0, 6, 3)
+
 opening_price, closing_price = DataSource().tickerValues(data)
 
 
@@ -31,3 +33,5 @@ def printValues(opening_price, closing_price):
 
 
 printValues(opening_price, closing_price)
+t = DataSource().fetchTickers()
+print(t)
