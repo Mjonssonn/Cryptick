@@ -7,16 +7,16 @@ import yfinance as yf
 from userinput import UserInput
 from datasource import DataSource
 
-
-#data = DataSource().ticker(0, 3, 3)
-data = yf.download(tickers='BTC-USD', period='5d', interval='1h')
-print(data)
-opening_price, closing_price = DataSource().tickerValues(data)
+# opening_price, closing_price = DataSource().tickerValues(data)
 
 
 # Calculate percentage difference
 def percentage(opening_price, closing_price):
     return ((closing_price/opening_price) - 1)*100
+
+
+def percentageDecimals(opening_price, closing_price):
+    return ((closing_price/opening_price))
 
 
 def printValues(opening_price, closing_price):
