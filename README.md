@@ -12,3 +12,6 @@ WIP
 Required installs:
 
 pip install yahooquery
+pip install Flask
+
+
